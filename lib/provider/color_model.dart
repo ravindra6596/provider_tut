@@ -20,6 +20,7 @@ class ColorStatusState extends ChangeNotifier {
         break;
       default:
         buttonColor = Colors.red;
+        numberOfClicks=0;
         break;
     }
     notifyListeners();
