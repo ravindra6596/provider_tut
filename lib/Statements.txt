@@ -118,13 +118,12 @@ class _State extends State<MyApp> {
   ];
 
   void _runFilter(String enteredKeyword) {
-    List results = [];
     if (enteredKeyword.isEmpty) {
-      results = myData;
+      results = BalanceModel.getData(myData);
     } else {
-      results = myData
+      results = BalanceModel.getData(myData)
           .where(
-            (user) => user["date"].toString().contains(
+            (data) => data.date.contains(
                   enteredKeyword.toLowerCase(),
                 ),
           )
@@ -134,15 +133,18 @@ class _State extends State<MyApp> {
 
   // This list holds the data for the list view
   List _foundUsers = [];
+  List results = [];
+  var result;
   @override
   initState() {
     _foundUsers = myData;
+    result = BalanceModel.getData(myData);
+    print(result);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    var result = BalanceModel.getData(myData);
     print(result.length);
     return Scaffold(
       appBar: AppBar(
