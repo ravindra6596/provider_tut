@@ -1,0 +1,191 @@
+List 1 that has data 
+
+List updatedList = [
+    {
+        "transGroup": 1,
+        "transType": 0,
+        "serviceTypeId": 0,
+        "serviceDescription": "Opening Balance",
+        "financialYear": "2022/2023",
+        "july": 1645.96,
+        "august": 1557.98,
+        "september": 2107.34,
+        "october": 2774.48,
+        "november": 2573.03,
+        "december": 0,
+        "january": 0,
+        "febuary": 0,
+        "march": 0,
+        "april": 0,
+        "may": 0,
+        "june": 0
+    },
+    {
+        "transGroup": 201,
+        "transType": 111,
+        "serviceTypeId": 6,
+        "serviceDescription": "Electricity Metered",
+        "financialYear": "2022/2023",
+        "july": 740.22,
+        "august": 526.46,
+        "september": 1170.7,
+        "october": 519.05,
+        "november": 0,
+        "december": 0,
+        "january": 0,
+        "febuary": 0,
+        "march": 0,
+        "april": 0,
+        "may": 0,
+        "june": 0
+    },
+    {
+        "transGroup": 601,
+        "transType": 0,
+        "serviceTypeId": 0,
+        "serviceDescription": "Interest",
+        "financialYear": "2022/2023",
+        "july": 11.8,
+        "august": 22.9,
+        "september": 22.9,
+        "october": 29.5,
+        "november": 0,
+        "december": 0,
+        "january": 0,
+        "febuary": 0,
+        "march": 0,
+        "april": 0,
+        "may": 0,
+        "june": 0
+    },
+    {
+        "transGroup": 616,
+        "transType": 0,
+        "serviceTypeId": 0,
+        "serviceDescription": "Journal Credit",
+        "financialYear": "2022/2023",
+        "july": 0,
+        "august": 0,
+        "september": -526.46,
+        "october": 0,
+        "november": 0,
+        "december": 0,
+        "january": 0,
+        "febuary": 0,
+        "march": 0,
+        "april": 0,
+        "may": 0,
+        "june": 0
+    },
+    {
+        "transGroup": 900,
+        "transType": 0,
+        "serviceTypeId": 0,
+        "serviceDescription": "Total",
+        "financialYear": "2022/2023",
+        "july": 752.02,
+        "august": 549.36,
+        "september": 667.14,
+        "october": 548.55,
+        "november": 0,
+        "december": 0,
+        "january": 0,
+        "febuary": 0,
+        "march": 0,
+        "april": 0,
+        "may": 0,
+        "june": 0
+    },
+    {
+        "transGroup": 915,
+        "transType": 0,
+        "serviceTypeId": 0,
+        "serviceDescription": "Receipts",
+        "financialYear": "2022/2023",
+        "july": -840,
+        "august": 0,
+        "september": 0,
+        "october": -750,
+        "november": 0,
+        "december": 0,
+        "january": 0,
+        "febuary": 0,
+        "march": 0,
+        "april": 0,
+        "may": 0,
+        "june": 0
+    },
+    {
+        "transGroup": 990,
+        "transType": 0,
+        "serviceTypeId": 0,
+        "serviceDescription": "Closing Balance",
+        "financialYear": "2022/2023",
+        "july": 1557.98,
+        "august": 2107.34,
+        "september": 2774.48,
+        "october": 2573.03,
+        "november": 2573.03,
+        "december": 0,
+        "january": 0,
+        "febuary": 0,
+        "march": 0,
+        "april": 0,
+        "may": 0,
+        "june": 0
+    }
+];
+
+List 2 has monthnames:
+
+List monthName = ["July", "August", "September", "October", "November", "December", "January", "February", "March", "April", "May", "June"];
+
+Then I apply the logic below
+
+List data = [];
+int? monthIndex;
+    for (var i = 0; i < updatedList.length; i++) {
+      if (monthName[monthIndex] == "July") {
+        data.add(updatedList[i].july.toString());
+      } else if (monthName[monthIndex] == "August") {
+        data.add(updatedList[i].august.toString());
+      } //upto all 12 months
+    }
+    
+It gives the result like july data in july card , august data in august card and so on.....
+
+My main motive is apply search filter in the below list format ,when I type month name in textfield it shows the all data of typed month name
+//july card widget
+July
+"Opening Balance" : 1645.96,
+"Electricity Metered": 740.22.......
+//August card widget
+August 
+"Opening Balance" : 48254.96,
+"Electricity Metered": 16465.22.......
+
+
+Widget:
+
+return ListView.builder(
+      padding: EdgeInsets.zero,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: updatedList.length,
+      itemBuilder: (context, childIndex) {
+        return ListTile(
+          visualDensity: const VisualDensity(
+            vertical: -4,
+          ),
+          contentPadding: EdgeInsets.zero,
+          title: Text(
+            updatedList[childIndex].serviceDescription.toString(),
+            style: caption,
+          ),
+          trailing: Text(
+            data[childIndex],
+            style: dataTitle.copyWith(fontSize: 14),
+          ),
+        );
+      },
+    );
