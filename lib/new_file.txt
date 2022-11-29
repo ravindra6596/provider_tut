@@ -136,6 +136,129 @@ List updatedList = [
     }
 ];
 
+List has some serviceDescription
+
+[
+    {
+        "transGroup": 1,
+        "transType": 0,
+        "serviceTypeId": 0,
+        "serviceDescription": "Opening Balance",
+        "financialYear": "2022/2023",
+        "july": 0,
+        "august": 0,
+        "september": 0,
+        "october": 0,
+        "november": 0,
+        "december": 0,
+        "january": 0,
+        "febuary": 0,
+        "march": 0,
+        "april": 0,
+        "may": 0,
+        "june": 0
+    },
+    {
+        "transGroup": 990,
+        "transType": 0,
+        "serviceTypeId": 0,
+        "serviceDescription": "Closing Balance",
+        "financialYear": "2022/2023",
+        "july": 0,
+        "august": 0,
+        "september": 0,
+        "october": 0,
+        "november": 0,
+        "december": 0,
+        "january": 0,
+        "febuary": 0,
+        "march": 0,
+        "april": 0,
+        "may": 0,
+        "june": 0
+    }
+];
+Other transaction list data 
+
+[
+    {
+        "transGroup": 1,
+        "transType": 0,
+        "serviceTypeId": 0,
+        "serviceDescription": "Opening Balance",
+        "financialYear": "2022/2023",
+        "july": 5626.43,
+        "august": 5660.02,
+        "september": 5693.61,
+        "october": 5727.2,
+        "november": 5760.79,
+        "december": 0,
+        "january": 0,
+        "febuary": 0,
+        "march": 0,
+        "april": 0,
+        "may": 0,
+        "june": 0
+    },
+    {
+        "transGroup": 601,
+        "transType": 0,
+        "serviceTypeId": 0,
+        "serviceDescription": "Interest",
+        "financialYear": "2022/2023",
+        "july": 33.59,
+        "august": 33.59,
+        "september": 33.59,
+        "october": 33.59,
+        "november": 0,
+        "december": 0,
+        "january": 0,
+        "febuary": 0,
+        "march": 0,
+        "april": 0,
+        "may": 0,
+        "june": 0
+    },
+    {
+        "transGroup": 900,
+        "transType": 0,
+        "serviceTypeId": 0,
+        "serviceDescription": "Total",
+        "financialYear": "2022/2023",
+        "july": 33.59,
+        "august": 33.59,
+        "september": 33.59,
+        "october": 33.59,
+        "november": 0,
+        "december": 0,
+        "january": 0,
+        "febuary": 0,
+        "march": 0,
+        "april": 0,
+        "may": 0,
+        "june": 0
+    },
+    {
+        "transGroup": 990,
+        "transType": 0,
+        "serviceTypeId": 0,
+        "serviceDescription": "Closing Balance",
+        "financialYear": "2022/2023",
+        "july": 5660.02,
+        "august": 5693.61,
+        "september": 5727.2,
+        "october": 5760.79,
+        "november": 5760.79,
+        "december": 0,
+        "january": 0,
+        "febuary": 0,
+        "march": 0,
+        "april": 0,
+        "may": 0,
+        "june": 0
+    }
+]
+
 List 2 has monthnames:
 
 List monthName = ["July", "August", "September", "October", "November", "December", "January", "February", "March", "April", "May", "June"];
