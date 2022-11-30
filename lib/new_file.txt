@@ -266,35 +266,41 @@ List monthName = ["July", "August", "September", "October", "November", "Decembe
 Then I apply the logic below
 
 List data = [];
-int? monthIndex;
-    for (var i = 0; i < updatedList.length; i++) {
+  Widget apiData(
+      int monthIndex, List<UpdateDataModel> updatedList) {
+    List data = [];
+    for (var i = 0; i < transactionLists.length; i++) {
       if (monthName[monthIndex] == "July") {
-        data.add(updatedList[i].july.toString());
+        data.add(transactionLists[i].july.toString());
       } else if (monthName[monthIndex] == "August") {
-        data.add(updatedList[i].august.toString());
-      } //upto all 12 months
+        data.add(transactionLists[i].august.toString());
+      } else if (monthName[monthIndex] == "September") {
+        data.add(transactionLists[i].september.toString());
+      } else if (monthName[monthIndex] == "October") {
+        data.add(transactionLists[i].october.toString());
+      } else if (monthName[monthIndex] == "November") {
+        data.add(transactionLists[i].november.toString());
+      } else if (monthName[monthIndex] == "December") {
+        data.add(transactionLists[i].december.toString());
+      } else if (monthName[monthIndex] == "January") {
+        data.add(transactionLists[i].january.toString());
+      } else if (monthName[monthIndex] == "February") {
+        data.add(transactionLists[i].febuary.toString());
+      } else if (monthName[monthIndex] == "March") {
+        data.add(transactionLists[i].march.toString());
+      } else if (monthName[monthIndex] == "April") {
+        data.add(transactionLists[i].april.toString());
+      } else if (monthName[monthIndex] == "May") {
+        data.add(transactionLists[i].may.toString());
+      } else if (monthName[monthIndex] == "June") {
+        data.add(transactionLists[i].june.toString());
+      }
     }
-    
-It gives the result like july data in july card , august data in august card and so on.....
-
-My main motive is apply search filter in the below list format ,when I type month name in textfield it shows the all data of typed month name
-//july card widget
-July
-"Opening Balance" : 1645.96,
-"Electricity Metered": 740.22.......
-//August card widget
-August 
-"Opening Balance" : 48254.96,
-"Electricity Metered": 16465.22.......
-
-
-Widget:
-
-return ListView.builder(
+    return ListView.builder(
       padding: EdgeInsets.zero,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: updatedList.length,
+      itemCount: transactionLists.length,
       itemBuilder: (context, childIndex) {
         return ListTile(
           visualDensity: const VisualDensity(
@@ -312,3 +318,47 @@ return ListView.builder(
         );
       },
     );
+  }
+    
+It gives the result like july data in july card , august data in august card and so on.....
+
+My main motive is apply search filter in the below list format ,when I type month name in textfield it shows the all data of typed month name
+//july card widget
+July
+"Opening Balance" : 1645.96,
+"Electricity Metered": 740.22.......
+//August card widget
+August 
+"Opening Balance" : 48254.96,
+"Electricity Metered": 16465.22.......
+
+
+Widget:
+
+     ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  itemCount: displayList.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      elevation: 5,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              displayList[index],//here display the month name
+                              style: dataTitle.copyWith(fontSize: 16),
+                            ),
+                            apiData(index, updatedList)//here I have call for loop logic function
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
