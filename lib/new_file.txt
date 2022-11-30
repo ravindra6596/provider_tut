@@ -1,6 +1,6 @@
 List 1 that has data 
 
-List updatedList = [
+List transactionLists = [
     {
         "transGroup": 1,
         "transType": 0,
@@ -267,7 +267,7 @@ Then I apply the logic below
 
 List data = [];
   Widget apiData(
-      int monthIndex, List<UpdateDataModel> updatedList) {
+      int monthIndex, List<UpdateDataModel> transactionLists) {
     List data = [];
     for (var i = 0; i < transactionLists.length; i++) {
       if (monthName[monthIndex] == "July") {
@@ -308,7 +308,7 @@ List data = [];
           ),
           contentPadding: EdgeInsets.zero,
           title: Text(
-            updatedList[childIndex].serviceDescription.toString(),
+            transactionLists[childIndex].serviceDescription.toString(),
             style: caption,
           ),
           trailing: Text(
