@@ -362,3 +362,33 @@ Widget:
                     );
                   },
                 ),
+                
+//Main Listview Widget:
+
+                ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  itemCount: displayList.length,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      elevation: 5,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              displayList[index],
+                              style: dataTitle.copyWith(fontSize: 16),
+                            ),
+                            apiData(index, transactionLists)
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
